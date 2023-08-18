@@ -15,6 +15,10 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Express Typescript on Vercel')
+})
+
 app.use("/api/balance", balanceController);
 app.use("/api/transactions", transactionsController);
 
