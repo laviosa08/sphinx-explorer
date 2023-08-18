@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import balanceController from "./src/controllers/balanceController";
-import transactionsController from "./src/controllers/transactionsController";
+import balanceController from "./controllers/balanceController";
+import transactionsController from "./controllers/transactionsController";
 import Moralis from "moralis";
 
 require("dotenv").config();
