@@ -23,7 +23,15 @@ export async function getUSDCBalance(
       USDC_ABI,
       provider
     );
+    //check if address is valid
+    const isValidAddress = ethers.isAddress(address);
+    if(!isValidAddress){
+      let error = 'Invalid Address';
+      throw error;
+    }
+
     const balance = await contract.balanceOf(address);
+
     // Convert the balance to a string and format it
     return ethers.formatUnits(balance, 6);
   } catch (error) {
@@ -37,6 +45,14 @@ export async function getUSDCTransactions(
   res: Response
 ): Promise<any> {
   try {
+
+    //check if address is valid
+    const isValidAddress = ethers.isAddress(address);
+    if(!isValidAddress){
+      let error = 'Invalid Address';
+      throw error;
+    }
+
     const chain = EvmChain.ETHEREUM;
     const transactionsRequest = {
       chain: chain,
