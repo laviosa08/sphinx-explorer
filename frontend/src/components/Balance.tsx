@@ -3,7 +3,6 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import { BASE_URL } from "../utils/api";
 import { Box, CircularProgress, Container } from "@mui/material";
-import { BoltRounded } from "@mui/icons-material";
 
 type Props = {
   address: string;
