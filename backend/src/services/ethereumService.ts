@@ -6,10 +6,10 @@ import { ethers } from "ethers";
 import { Response } from "express";
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
+require("dotenv").config();
 
-const INFURA_URL =
-  "https://mainnet.infura.io/v3/9bfdff7568c24f5688249e384b86caa0";
-const USDC_CONTRACT_ADDRESS = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+const INFURA_URL = process.env.INFURA_URL;
+const USDC_CONTRACT_ADDRESS = process.env.USDC_CONTRACT_ADDRESS || '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48';
 const USDC = "USDC";
 
 export async function getUSDCBalance(

@@ -5,8 +5,9 @@ import balanceController from "./src/controllers/balanceController";
 import transactionsController from "./src/controllers/transactionsController";
 import Moralis from "moralis";
 
-const MORALIS_API_KEY =
-  "kh13ZzFmm26dU8oQW3ZLXRNt2X9U9ck3xnhQ5pPnM5JyQQKUeMleXx1ZAjDxdv4N";
+require("dotenv").config();
+
+const MORALIS_API_KEY = process.env.MORALIS_API_KEY;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
